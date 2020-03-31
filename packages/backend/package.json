@@ -1,13 +1,13 @@
 {
   "name": "backend",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "author": "Alexandre <alexandre.monteiro.bec@gmail.com>",
   "license": "MIT",
   "main": "src/index.ts",
   "scripts": {
     "start": "nodemon src/index.ts"
   },
-  "dependencies": {    
+  "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "knex": "^0.20.13",
