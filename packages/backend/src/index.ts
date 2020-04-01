@@ -1,5 +1,6 @@
-import cors from 'cors';
 import express from 'express';
+
+import cors from 'cors';
 
 // eslint-disable-next-line
 import routes from './routes';

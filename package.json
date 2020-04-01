@@ -5,7 +5,7 @@
   "author": "Alexandre <alexandre.monteiro.bec@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "lerna run start --steam"
+    "start": "lerna run start --stream"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",

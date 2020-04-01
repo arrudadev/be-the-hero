@@ -41,6 +41,7 @@ module.exports = {
       {
           newlinesBetween: 'always',
           groups: [
+            '/^express/',
             '/^react/',
             'module',
             ['parent', 'sibling', 'index'],
@@ -48,5 +49,7 @@ module.exports = {
           alphabetize: { order: 'asc', ignoreCase: true },
       },
     ],
+    'import/extensions': 'off',
+    'import/no-unresolved': 'off'
   },
 };

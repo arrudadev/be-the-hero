@@ -1,10 +1,14 @@
-import express, { Request, Response } from 'express';
+import express from 'express';
+
+import IncidentController from './controllers/IncidentController';
+import OngController from './controllers/OngController';
 
 const routes = express.Router();
 
-routes.get('/users', (request: Request, response: Response) => response.json({
-	evento: 'Semana OmniStack 11.0',
-	aluno: 'Alexandre Monteiro Teste',
-}));
+routes.get('/ongs', new OngController().index);
+
+// routes.post('/ongs', new OngController().create);
+
+routes.post('/incidents', new IncidentController().create);
 
 export default routes;
