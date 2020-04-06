@@ -21,4 +21,4 @@ class IncidentController {
 	}
 }
 
-export default IncidentController;
+export default new IncidentController();
