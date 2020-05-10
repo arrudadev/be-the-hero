@@ -1,7 +1,6 @@
 require('ts-node/register');
 
-module.exports = {
-
+export default {
 	development: {
 		client: 'sqlite3',
 		connection: {

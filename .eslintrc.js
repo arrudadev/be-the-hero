@@ -23,8 +23,7 @@ module.exports = {
   },
   plugins: [
     '@typescript-eslint',
-    'react',
-    'classes',
+    'react',    
     'import-helpers'
   ],
   rules: {
@@ -33,9 +32,7 @@ module.exports = {
     'linebreak-style': 'off',    
     'comma-spacing': 2,
     'no-multiple-empty-lines': [2, { 'max': 1 }],
-    'no-trailing-spaces': 2,
-    'classes/name': [2, 'class', 'method'],
-    'class-methods-use-this': 'off',
+    'no-trailing-spaces': 2,    
     'import-helpers/order-imports': [
       'warn',
       {
@@ -50,6 +47,9 @@ module.exports = {
       },
     ],
     'import/extensions': 'off',
-    'import/no-unresolved': 'off'
+    'import/no-unresolved': 'off',
+    'class-methods-use-this': 'off',
+    "camelcase": 'off',
+    "@typescript-eslint/camelcase": 'off'
   },
 };
