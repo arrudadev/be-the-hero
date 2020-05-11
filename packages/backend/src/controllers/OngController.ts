@@ -7,16 +7,11 @@ import connection from '../database/connection';
 class OngController {
 	async index(request: Request, response: Response): Promise<any> {
 		const ongs = await connection('ongs').select('*');
-		const teste = request.headers;
-		console.log(teste);
-
 		return response.json(ongs);
 	}
 
 	async create(request: Request, response: Response): Promise<any> {
-		const {
-			name, email, whatsapp, city, uf,
-		} = request.body;
+		const { name, email, whatsapp, city, uf } = request.body;
 
 		const id = crypto.randomBytes(4).toString('HEX');
 
@@ -29,7 +24,7 @@ class OngController {
 			uf,
 		});
 
-		response.json({ id });
+		return response.json({ id });
 	}
 }
 

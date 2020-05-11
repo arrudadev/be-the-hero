@@ -50,6 +50,7 @@ module.exports = {
     'import/no-unresolved': 'off',
     'class-methods-use-this': 'off',
     "camelcase": 'off',
-    "@typescript-eslint/camelcase": 'off'
+    "@typescript-eslint/camelcase": 'off',
+    'object-curly-newline': 'off'
   },
 };
