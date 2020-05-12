@@ -51,6 +51,8 @@ module.exports = {
     'class-methods-use-this': 'off',
     "camelcase": 'off',
     "@typescript-eslint/camelcase": 'off',
-    'object-curly-newline': 'off'
+    'object-curly-newline': 'off',
+    'react/jsx-filename-extension': 'off',
+    'react/jsx-indent': 'off'
   },
 };

@@ -4,6 +4,10 @@
   "main": "index.js",
   "author": "Alexandre <alexandre.monteiro.bec@gmail.com>",
   "license": "MIT",
+  "private": true,
+  "workspaces": [
+     "packages/*"
+  ],
   "scripts": {
     "start": "lerna run start --stream"
   },
