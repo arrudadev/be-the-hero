@@ -53,6 +53,7 @@ module.exports = {
     "@typescript-eslint/camelcase": 'off',
     'object-curly-newline': 'off',
     'react/jsx-filename-extension': 'off',
-    'react/jsx-indent': 'off'
+    'react/jsx-indent': 'off',
+    'max-len': 'off'
   },
 };
