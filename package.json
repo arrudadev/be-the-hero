@@ -9,7 +9,7 @@
      "packages/*"
   ],
   "scripts": {
-    "start": "lerna run start --stream"
+    "start": "lerna run start"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",

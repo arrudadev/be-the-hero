@@ -54,6 +54,9 @@ module.exports = {
     'object-curly-newline': 'off',
     'react/jsx-filename-extension': 'off',
     'react/jsx-indent': 'off',
-    'max-len': 'off'
+    'max-len': 'off',
+    'react/jsx-indent-props': 'off',
+    'react/jsx-one-expression-per-line': 'off',
+    'import/prefer-default-export': 'off'
   },
 };
