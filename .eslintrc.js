@@ -57,6 +57,7 @@ module.exports = {
     'max-len': 'off',
     'react/jsx-indent-props': 'off',
     'react/jsx-one-expression-per-line': 'off',
-    'import/prefer-default-export': 'off'
+    'import/prefer-default-export': 'off',
+    'react/react-in-jsx-scope': 'off',
   },
 };
