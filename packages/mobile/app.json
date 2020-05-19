@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "mobile",
-    "slug": "mobile",
+    "name": "teste",
+    "slug": "teste",
     "platforms": [
       "ios",
       "android",
