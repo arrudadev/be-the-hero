@@ -4,13 +4,15 @@ import connection from '../database/connection';
 
 class IncidentController {
 	async index(request: Request, response: Response): Promise<any> {
-		const { page = 1 } = request.query;
+		let { page = 1 } = request.query;
+
+		if (typeof page !== 'number') page = Number(page);
 
 		const [count] = await connection('incidents').count();
 		const incidents = await connection('incidents')
 			.join('ongs', 'ongs.id', '=', 'incidents.ong_id')
 			.limit(5)
-			.offset((Number(page) - 1 * 5))
+			.offset((page - 1 * 5))
 			.select([
 				'incidents.*',
 				'ongs.name',
