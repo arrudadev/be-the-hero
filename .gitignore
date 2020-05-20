@@ -84,3 +84,6 @@ npm-debug.*
 *.orig.*
 web-build/
 web-report/
+
+/database/*.sqlite3
+/database/*.sqlite

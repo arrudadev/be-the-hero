@@ -59,5 +59,6 @@ module.exports = {
     'react/jsx-one-expression-per-line': 'off',
     'import/prefer-default-export': 'off',
     'react/react-in-jsx-scope': 'off',
+    'lines-between-class-members': 'off'
   },
 };
