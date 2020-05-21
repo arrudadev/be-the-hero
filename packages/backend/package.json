@@ -5,11 +5,12 @@
   "license": "MIT",
   "main": "src/index.ts",
   "scripts": {
-    "start": "nodemon src/index.ts",
+    "start": "nodemon src/server.ts",
     "migrate:make": "knex --knexfile ./knexfile.ts -x ts migrate:make",
     "migrate:latest": "knex --knexfile ./knexfile.ts migrate:latest",
+    "migrate:latest:test": "knex --knexfile ./knexfile.ts migrate:latest --env test",
     "migrate:rollback": "knex --knexfile ./knexfile.ts migrate:rollback",
-    "migrate:status": "knex --knexfile ./knexfile.ts migrate:status"
+    "migrate:status": "knex --knexfile ./knexfile.ts migrate:status"    
   },
   "dependencies": {
     "celebrate": "^12.1.1",
@@ -22,7 +23,7 @@
   },
   "devDependencies": {
     "@types/cors": "^2.8.6",
-    "@types/express": "^4.17.3",
+    "@types/express": "^4.17.3",    
     "nodemon": "^2.0.2",
     "sucrase": "^3.13.0"
   },

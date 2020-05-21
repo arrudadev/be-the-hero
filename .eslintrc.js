@@ -4,6 +4,7 @@ module.exports = {
     browser: true,
     es6: true,
     node: true,
+    jest: true
   },
   extends: [
     'plugin:@typescript-eslint/recommended',
@@ -59,6 +60,7 @@ module.exports = {
     'react/jsx-one-expression-per-line': 'off',
     'import/prefer-default-export': 'off',
     'react/react-in-jsx-scope': 'off',
-    'lines-between-class-members': 'off'
+    'lines-between-class-members': 'off',
+    'import/no-extraneous-dependencies': 'off'
   },
 };

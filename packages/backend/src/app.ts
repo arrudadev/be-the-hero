@@ -16,4 +16,4 @@ app.use(routes);
 
 app.use(errors());
 
-app.listen(process.env.SERVER_PORT);
+export default app;
