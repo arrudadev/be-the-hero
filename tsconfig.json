@@ -22,5 +22,8 @@
       "baseUrl": ".",
       "resolveJsonModule": true,      
     },
-    "exclude": ["node_modules", "packages/**/__tests__"]
+    "exclude": ["node_modules", "packages/**/__tests__"],
+    "typeRoots": [
+      "node_modules/@types"
+    ]
   }

@@ -16,10 +16,10 @@ module.exports = {
 	test: {
 		client: 'sqlite3',
 		connection: {
-			filename: './packages/backend/src/database/test.sqlite',
+			filename: './src/database/test.sqlite',
 		},
 		migrations: {
-			directory: './packages/backend/src/database/migrations',
+			directory: './src/database/migrations',
 			extensions: ['js', 'ts'],
 		},
 		useNullAsDefault: true,

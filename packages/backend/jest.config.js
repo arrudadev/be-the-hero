@@ -3,7 +3,7 @@ module.exports = {
 	clearMocks: true,
 	globals: {
 		'ts-jest': {
-			tsConfig: 'tsconfig.json',
+			tsConfig: '../../tsconfig.json',
 		},
 	},
 	preset: 'ts-jest',
