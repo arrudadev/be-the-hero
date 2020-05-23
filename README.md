@@ -6,16 +6,17 @@
   🚀 OmniStack Week 11.0
 </h4>
 
-<p align="center">
-    <a href='https://coveralls.io/github/monteiro-alexandre/be-the-hero?branch=master'><img src='https://coveralls.io/repos/github/monteiro-alexandre/be-the-hero/badge.svg?branch=master' alt='Coverage Status' /></a>
-</p>
+<div align="center">
+    
+![ci](https://github.com/monteiro-alexandre/be-the-hero/workflows/ci/badge.svg?branch=master&event=push)<space><space>
+[![Coverage Status](https://coveralls.io/repos/github/monteiro-alexandre/be-the-hero/badge.svg?branch=master)](https://coveralls.io/github/monteiro-alexandre/be-the-hero?branch=master)
+
+</div>
 
 <p align="center">
-  <a href="#rocket-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-layout">Layout</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-como-contribuir">Como contribuir</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#memo-licença">Licença</a>
+  <a href="#rocket-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#overview">Overview</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#memo-license">License</a>
 </p>
 
 <br>
@@ -24,19 +25,25 @@
   <img alt="BeTheHero" src=".github/assets/bethehero.png" width="100%">
 </p>
 
-## :rocket: Tecnologias
+## :rocket: Technologies
 
-Esse projeto foi desenvolvido com as seguintes tecnologias:
+This project was developed with the following technologies:
 
+- [Typescript](https://www.typescriptlang.org/)
 - [Node.js](https://nodejs.org/en/)
 - [React](https://reactjs.org)
 - [React Native](https://facebook.github.io/react-native/)
 - [Expo](https://expo.io/)
+- [Lerna](https://lerna.js.org/)
+- [Eslint](https://eslint.org/)
+- [Commitlint](https://commitlint.js.org/#/)
+- [Knex.Js](http://knexjs.org/)
 
-## 💻 Projeto
 
-O BeTheHero é um projeto que visa conectar pessoas que desejam fazer contribuições monetárias a ONG's (Organizações não governamentais) que precisam de ajuda.
+## 💻 Overview
 
-## :memo: Licença
+BeTheHero is a project that aims to connect people who wish to make monetary contributions to NGOs (non-governmental organizations) that need help.
 
-Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para mais detalhes.
+## :memo: License
+
+This project is under the MIT license. See the archive [LICENSE](LICENSE.md) for more details.
