@@ -3,14 +3,14 @@ module.exports = {
 	clearMocks: true,
 	collectCoverage: true,
 	collectCoverageFrom: [
-		'src/**/*.{js,ts}',
+		'packages/backend/src/**/*.{js,ts}',
 	],
 	coverageReporters: ['json', 'lcov'],
 	globals: {
 		'ts-jest': {
-			tsConfig: '../../tsconfig.json',
+			tsConfig: 'tsconfig.json',
 		},
 	},
 	preset: 'ts-jest',
-	testEnvironment: 'node'
+	testEnvironment: 'node',
 };

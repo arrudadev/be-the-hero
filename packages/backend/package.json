@@ -6,7 +6,6 @@
   "main": "src/index.ts",
   "scripts": {
     "start": "nodemon src/server.ts",
-    "test": "cross-env NOVE_ENV=test jest --coverage",
     "migrate:make": "knex --knexfile ./knexfile.ts -x ts migrate:make",
     "migrate:latest": "knex --knexfile ./knexfile.ts migrate:latest",
     "migrate:latest:test": "knex --knexfile ./knexfile.ts migrate:latest --env test",
