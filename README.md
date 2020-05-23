@@ -8,14 +8,14 @@
 
 <div align="center">
     
-![ci](https://github.com/monteiro-alexandre/be-the-hero/workflows/ci/badge.svg?branch=master&event=push)<space><space>
+![ci](https://github.com/monteiro-alexandre/be-the-hero/workflows/ci/badge.svg?branch=master)<space><space>
 [![Coverage Status](https://coveralls.io/repos/github/monteiro-alexandre/be-the-hero/badge.svg?branch=master)](https://coveralls.io/github/monteiro-alexandre/be-the-hero?branch=master)
 
 </div>
 
 <p align="center">
   <a href="#rocket-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#overview">Overview</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-overview">Overview</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#memo-license">License</a>
 </p>
 
