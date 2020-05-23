@@ -8,6 +8,8 @@
   "scripts": {
     "start": "lerna run start",
     "test": "lerna run test --stream",
+    "lint": "eslint packages --ext ts,tsx",
+    "coveralls": "cat ./packages/backend/coverage/lcov.info | coveralls",
     "bootstrap": "lerna bootstrap"
   },
   "devDependencies": {
@@ -17,6 +19,7 @@
     "@types/node": "^13.9.5",
     "@typescript-eslint/eslint-plugin": "^2.25.0",
     "@typescript-eslint/parser": "^2.25.0",
+    "coveralls": "^3.1.0",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.1.0",
     "eslint-config-prettier": "^6.10.1",
