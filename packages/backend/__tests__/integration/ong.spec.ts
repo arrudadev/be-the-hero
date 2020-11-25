@@ -12,12 +12,9 @@ interface NewOngOptions {
 }
 
 describe('ONG', () => {
-
-	const creaeNewONG = async (options: NewOngOptions): Promise<supertest.Response> => {
-		return supertest(app)
-			.post('/ongs')
-			.send(options);
-	}
+	const createNewONG = async (options: NewOngOptions): Promise<supertest.Response> => supertest(app)
+		.post('/ongs')
+		.send(options);
 
 	beforeEach(async () => {
 		await connection.migrate.rollback();
@@ -29,7 +26,7 @@ describe('ONG', () => {
 	});
 
 	it('should be able to create a new ONG', async () => {
-		const response = await creaeNewONG({
+		const response = await createNewONG({
 			name: 'ONG TEST',
 			email: 'test@test.com.br',
 			whatsapp: '11912345678',
@@ -41,7 +38,7 @@ describe('ONG', () => {
 	});
 
 	it('should be able to list all ONGs', async () => {
-		await creaeNewONG({
+		await createNewONG({
 			name: 'ONG 01',
 			email: 'ong01@test.com.br',
 			whatsapp: '11111111111',
@@ -49,7 +46,7 @@ describe('ONG', () => {
 			uf: 'SP',
 		});
 
-		await creaeNewONG({
+		await createNewONG({
 			name: 'ONG 02',
 			email: 'ong02@test.com.br',
 			whatsapp: '22222222222',
@@ -59,14 +56,14 @@ describe('ONG', () => {
 
 		const response = await supertest(app)
 			.get('/ongs');
-		
-		expect(response.body).toHaveLength(2);		
+
+		expect(response.body).toHaveLength(2);
 		expect(response.body[0]).toHaveProperty('name');
 		expect(response.body[0]).toHaveProperty('email');
 		expect(response.body[0]).toHaveProperty('whatsapp');
 		expect(response.body[0]).toHaveProperty('city');
 		expect(response.body[0]).toHaveProperty('uf');
-		
+
 		expect(response.body[1]).toHaveProperty('name');
 		expect(response.body[1]).toHaveProperty('email');
 		expect(response.body[1]).toHaveProperty('whatsapp');
@@ -75,24 +72,22 @@ describe('ONG', () => {
 	});
 
 	describe('validations', () => {
-
 		it('should validate that no invalid parameters were passed when creating the ONG', async () => {
 			const response = await supertest(app)
-					.post('/ongs')
-					.send({
-						name: "test",
-						email: 'ong02@test.com.br',
-						whatsapp: '22222222222',
-						city: 'São Paulo',
-						uf: 'SP',
-						invalidParameter: 'test'
-					});
+				.post('/ongs')
+				.send({
+					name: 'test',
+					email: 'ong02@test.com.br',
+					whatsapp: '22222222222',
+					city: 'São Paulo',
+					uf: 'SP',
+					invalidParameter: 'test',
+				});
 			expect(response.status).toBe(400);
 			expect(response.body.statusCode).toBe(400);
 		});
 
 		describe('name', () => {
-
 			it('should validate whether the ONG name was passed in request body', async () => {
 				const response = await supertest(app)
 					.post('/ongs')
@@ -105,12 +100,12 @@ describe('ONG', () => {
 				expect(response.status).toBe(400);
 				expect(response.body.statusCode).toBe(400);
 			});
-	
+
 			it('should validate whether the ONG name is not empty', async () => {
 				const response = await supertest(app)
 					.post('/ongs')
 					.send({
-						name: "",
+						name: '',
 						email: 'ong02@test.com.br',
 						whatsapp: '22222222222',
 						city: 'São Paulo',
@@ -119,7 +114,7 @@ describe('ONG', () => {
 				expect(response.status).toBe(400);
 				expect(response.body.statusCode).toBe(400);
 			});
-	
+
 			it('should validate whether the ONG name is a string', async () => {
 				const response = await supertest(app)
 					.post('/ongs')
@@ -136,7 +131,6 @@ describe('ONG', () => {
 		});
 
 		describe('email', () => {
-
 			it('should validate whether the ONG email was passed in request body', async () => {
 				const response = await supertest(app)
 					.post('/ongs')
@@ -149,12 +143,12 @@ describe('ONG', () => {
 				expect(response.status).toBe(400);
 				expect(response.body.statusCode).toBe(400);
 			});
-	
+
 			it('should validate whether the ONG email is not empty', async () => {
 				const response = await supertest(app)
 					.post('/ongs')
 					.send({
-						name: "ONG test",
+						name: 'ONG test',
 						email: '',
 						whatsapp: '22222222222',
 						city: 'São Paulo',
@@ -163,12 +157,12 @@ describe('ONG', () => {
 				expect(response.status).toBe(400);
 				expect(response.body.statusCode).toBe(400);
 			});
-	
+
 			it('should validate whether the ONG email is a string', async () => {
 				const response = await supertest(app)
 					.post('/ongs')
 					.send({
-						name: "ONG test",
+						name: 'ONG test',
 						email: 123123,
 						whatsapp: '22222222222',
 						city: 'São Paulo',
@@ -182,8 +176,8 @@ describe('ONG', () => {
 				const response = await supertest(app)
 					.post('/ongs')
 					.send({
-						name: "ONG test",
-						email: "invalidEmail",
+						name: 'ONG test',
+						email: 'invalidEmail',
 						whatsapp: '22222222222',
 						city: 'São Paulo',
 						uf: 'SP',
@@ -194,7 +188,6 @@ describe('ONG', () => {
 		});
 
 		describe('whatsapp', () => {
-
 			it('should validate whether the ONG whatsapp was passed in request body', async () => {
 				const response = await supertest(app)
 					.post('/ongs')
@@ -207,12 +200,12 @@ describe('ONG', () => {
 				expect(response.status).toBe(400);
 				expect(response.body.statusCode).toBe(400);
 			});
-	
+
 			it('should validate whether the ONG whatsapp is not empty', async () => {
 				const response = await supertest(app)
 					.post('/ongs')
 					.send({
-						name: "ONG test",
+						name: 'ONG test',
 						email: 'ong02@test.com.br',
 						whatsapp: '',
 						city: 'São Paulo',
@@ -224,25 +217,24 @@ describe('ONG', () => {
 		});
 
 		describe('city', () => {
-
 			it('should validate whether the ONG city was passed in request body', async () => {
 				const response = await supertest(app)
 					.post('/ongs')
 					.send({
 						name: 'ONG test',
 						email: 'ong02@test.com.br',
-						whatsapp: '22222222222',						
+						whatsapp: '22222222222',
 						uf: 'SP',
 					});
 				expect(response.status).toBe(400);
 				expect(response.body.statusCode).toBe(400);
 			});
-	
+
 			it('should validate whether the ONG city is not empty', async () => {
 				const response = await supertest(app)
 					.post('/ongs')
 					.send({
-						name: "ONG test",
+						name: 'ONG test',
 						email: 'ong02@test.com.br',
 						whatsapp: '22222222222',
 						city: '',
@@ -256,7 +248,7 @@ describe('ONG', () => {
 				const response = await supertest(app)
 					.post('/ongs')
 					.send({
-						name: "ONG test",
+						name: 'ONG test',
 						email: 'ong02@test.com.br',
 						whatsapp: '22222222222',
 						city: 13241234123,
@@ -268,7 +260,6 @@ describe('ONG', () => {
 		});
 
 		describe('uf', () => {
-
 			it('should validate whether the ONG uf was passed in request body', async () => {
 				const response = await supertest(app)
 					.post('/ongs')
@@ -281,12 +272,12 @@ describe('ONG', () => {
 				expect(response.status).toBe(400);
 				expect(response.body.statusCode).toBe(400);
 			});
-	
+
 			it('should validate whether the ONG uf is not empty', async () => {
 				const response = await supertest(app)
 					.post('/ongs')
 					.send({
-						name: "ONG test",
+						name: 'ONG test',
 						email: 'ong02@test.com.br',
 						whatsapp: '22222222222',
 						city: 'São Paulo',
@@ -300,7 +291,7 @@ describe('ONG', () => {
 				const response = await supertest(app)
 					.post('/ongs')
 					.send({
-						name: "ONG test",
+						name: 'ONG test',
 						email: 'ong02@test.com.br',
 						whatsapp: '22222222222',
 						city: 'São Paulo',
@@ -314,7 +305,7 @@ describe('ONG', () => {
 				const response = await supertest(app)
 					.post('/ongs')
 					.send({
-						name: "ONG test",
+						name: 'ONG test',
 						email: 'ong02@test.com.br',
 						whatsapp: '22222222222',
 						city: 'São Paulo',
