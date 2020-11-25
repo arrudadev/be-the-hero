@@ -57,4 +57,64 @@ describe('Incident', () => {
 
 		expect(response.body).toHaveProperty('id');
 	});
+
+	it('should be able to list Incidents with pagination', async () => {
+		await createNewIncident({
+			title: 'Incident TEST',
+			description: 'Incident teste description',
+			value: 10,
+		}, ONGId);
+
+		await createNewIncident({
+			title: 'Incident TEST',
+			description: 'Incident teste description',
+			value: 10,
+		}, ONGId);
+
+		await createNewIncident({
+			title: 'Incident TEST',
+			description: 'Incident teste description',
+			value: 10,
+		}, ONGId);
+
+		await createNewIncident({
+			title: 'Incident TEST',
+			description: 'Incident teste description',
+			value: 10,
+		}, ONGId);
+
+		await createNewIncident({
+			title: 'Incident TEST',
+			description: 'Incident teste description',
+			value: 10,
+		}, ONGId);
+
+		await createNewIncident({
+			title: 'Incident TEST',
+			description: 'Incident teste description',
+			value: 10,
+		}, ONGId);
+
+		await createNewIncident({
+			title: 'Incident TEST',
+			description: 'Incident teste description',
+			value: 10,
+		}, ONGId);
+
+		// First request without send page number
+		const response = await supertest(app)
+			.get('/incidents');
+
+		expect(response.body.length).toEqual(5);
+		expect(String(response.header['x-total-count'])).toEqual('7');
+
+		// Second request with send page number
+		// Getting the second page
+		const responseWithPageNumber = await supertest(app)
+			.get('/incidents')
+			.query({ page: 2 });
+
+		expect(responseWithPageNumber.body.length).toEqual(2);
+		expect(String(responseWithPageNumber.header['x-total-count'])).toEqual('7');
+	});
 });
