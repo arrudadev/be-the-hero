@@ -135,4 +135,18 @@ describe('Incident', () => {
 
 		expect(response.status).toBe(204);
 	});
+
+	it('should not be able to delete incident when authorization is not correct', async () => {
+		await createNewIncident({
+			title: 'Incident TEST',
+			description: 'Incident teste description',
+			value: 10,
+		}, ONGId);
+
+		const response = await supertest(app)
+			.delete('/incidents/1')
+			.set('Authorization', '12345');
+
+		expect(response.status).toBe(401);
+	});
 });
