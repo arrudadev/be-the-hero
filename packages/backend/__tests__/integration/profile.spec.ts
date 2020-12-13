@@ -17,7 +17,7 @@ interface NewIncidentOptions {
     value: number,
 }
 
-describe('Profile', () => {
+describe('Session', () => {
 	const createNewONG = async (options: NewOngOptions): Promise<supertest.Response> => supertest(app)
 		.post('/ongs')
 		.send(options);
