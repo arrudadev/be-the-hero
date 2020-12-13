@@ -121,4 +121,18 @@ describe('Incident', () => {
 		expect(responseWithPageNumber.body.length).toEqual(2);
 		expect(String(responseWithPageNumber.header['x-total-count'])).toEqual('7');
 	});
+
+	it('should be able to delete a Incident', async () => {
+		await createNewIncident({
+			title: 'Incident TEST',
+			description: 'Incident teste description',
+			value: 10,
+		}, ONGId);
+
+		const response = await supertest(app)
+			.delete('/incidents/1')
+			.set('Authorization', ONGId);
+
+		expect(response.status).toBe(204);
+	});
 });

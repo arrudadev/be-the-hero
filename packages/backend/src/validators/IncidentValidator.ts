@@ -30,7 +30,7 @@ class IncidentValidator {
 				authorization: Joi.string().required(),
 			}).unknown(),
 			[Segments.PARAMS]: Joi.object().keys({
-				page: Joi.number().required(),
+				id: Joi.number().required(),
 			}),
 		});
 	}
