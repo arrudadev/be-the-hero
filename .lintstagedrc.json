@@ -1,6 +1,7 @@
 {
-    "packages/**/*.{js,ts,tsx}": [
-      "eslint --ext js,ts,tsx --fix",
-      "git add"
-    ]
-  }
+  "packages/**/*.{js,ts,tsx}": [
+    "eslint --ext js,ts,tsx --fix",
+    "yarn test",
+    "git add"
+  ]
+}

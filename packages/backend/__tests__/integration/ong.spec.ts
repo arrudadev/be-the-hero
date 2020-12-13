@@ -16,9 +16,13 @@ describe('ONG', () => {
 		.post('/ongs')
 		.send(options);
 
-	beforeEach(async () => {
+	beforeAll(async () => {
 		await connection.migrate.rollback();
 		await connection.migrate.latest();
+	});
+
+	beforeEach(async () => {
+		await connection('ongs').truncate();
 	});
 
 	afterAll(async () => {

@@ -29,7 +29,7 @@ describe('Incident', () => {
 
 	let ONGId;
 
-	beforeEach(async () => {
+	beforeAll(async () => {
 		await connection.migrate.rollback();
 		await connection.migrate.latest();
 
@@ -42,6 +42,10 @@ describe('Incident', () => {
 		});
 
 		ONGId = response.body.id;
+	});
+
+	beforeEach(async () => {
+		await connection('incidents').truncate();
 	});
 
 	afterAll(async () => {
