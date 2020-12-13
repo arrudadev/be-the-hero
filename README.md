@@ -9,7 +9,7 @@
 <div align="center">
     
 ![ci](https://github.com/monteiro-alexandre/be-the-hero/workflows/ci/badge.svg?branch=master)<space><space>
-[![Coverage Status](https://coveralls.io/repos/github/monteiro-alexandre/be-the-hero/badge.svg?branch=master&service=github)](https://coveralls.io/github/monteiro-alexandre/be-the-hero?branch=master&service=github)
+[![Coverage Status](https://coveralls.io/repos/github/monteiro-alexandre/be-the-hero/badge.svg?branch=master)](https://coveralls.io/github/monteiro-alexandre/be-the-hero?branch=master)
 
 </div>
 
